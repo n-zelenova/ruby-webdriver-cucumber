@@ -26,6 +26,9 @@ AfterConfiguration do
   chrome_options.add_argument("--disable-translate")
   if $driver.nil?
     $driver = Selenium::WebDriver.for(:chrome, detach: false, options: chrome_options)
+    # below needed for browser to get to foreground
+    $driver.execute_script("alert('Bringing to foreground!')")
+    $driver.switch_to.alert.accept
   end
 end
 
