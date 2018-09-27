@@ -29,6 +29,7 @@ AfterConfiguration do
     # below needed for browser to get to foreground
     $driver.execute_script("alert('Bringing to foreground!')")
     $driver.switch_to.alert.accept
+    $driver.manage.timeouts.implicit_wait = 5
   end
 end
 
