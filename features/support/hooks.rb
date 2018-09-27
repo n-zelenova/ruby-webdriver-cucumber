@@ -24,6 +24,7 @@ AfterConfiguration do
   chrome_options.add_argument("--disable-download-notification")
   chrome_options.add_argument("--disable-popup-blocking")
   chrome_options.add_argument("--disable-translate")
+  chrome_options.add_argument("--dns-prefetch-disable")
   if $driver.nil?
     $driver = Selenium::WebDriver.for(:chrome, detach: false, options: chrome_options)
     # below needed for browser to get to foreground
